@@ -67,6 +67,7 @@ The counts (hate_speech_count, offensive_language_count, neither_count) could be
 
 # DATA ANALYSIS
 **1. Counts per class**
+
 ![alt text](Images/image.png)
 
 **Interpretation**
@@ -75,17 +76,20 @@ The majority of tweets fall into class 1. Depending on common labeling conventio
 
 
 **2. Distribution of Tweet Length**
+
 ![alt text](Images/image-1.png)
 
 **Interpretation:** 
 Most tweets in the dataset are short. The distribution follows what is typical for Twitter data, where users often post concise messages. Longer tweets are rare.
 **3.Average tweet length by class**
+
 ![alt text](Images/image-2.png)
 
 **Interpretation:** 
 Tweet length alone is not strongly discriminative between the classes. All classes contain both short and longer tweets with overlapping distributions. Length is unlikely to be a powerful feature for classification by itself.
 
 **4.Correlation between numeric columns**
+
 ![alt text](Images/image-3.png)
 
 **Interpretation:** 
@@ -94,6 +98,7 @@ The final class label was likely derived by majority vote or the highest count a
 
 
 **5.Scatter Plot**
+
 ![alt text](Images/image-4.png)
 
 **Interpretation:**
