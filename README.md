@@ -66,27 +66,83 @@ The counts (hate_speech_count, offensive_language_count, neither_count) could be
 
 
 # DATA ANALYSIS
+**1. Counts per class**
 ![alt text](Images/image.png)
 
+**Interpretation**
 
+The majority of tweets fall into class 1. Depending on common labeling conventions in hate speech datasets (e.g., similar to the popular Davidson et al. dataset), class 1 often represents "offensive language but not hate speech," class 0 "hate speech," and class 2 "neither." The extreme imbalance will make modeling challenging, especially for the minority classes (0 and 2).
+
+
+**2. Distribution of Tweet Length**
 ![alt text](Images/image-1.png)
 
-
+**Interpretation:** 
+Most tweets in the dataset are short. The distribution follows what is typical for Twitter data, where users often post concise messages. Longer tweets are rare.
+**3.Average tweet length by class**
 ![alt text](Images/image-2.png)
 
+**Interpretation:** 
+Tweet length alone is not strongly discriminative between the classes. All classes contain both short and longer tweets with overlapping distributions. Length is unlikely to be a powerful feature for classification by itself.
 
+**4.Correlation between numeric columns**
 ![alt text](Images/image-3.png)
 
+**Interpretation:** 
+The final class label was likely derived by majority vote or the highest count among the three categories. Offensive language appears to be the most commonly assigned category, while hate speech annotations are less frequent and somewhat distinct from offensive language annotations.
 
+
+
+**5.Scatter Plot**
 ![alt text](Images/image-4.png)
+
+**Interpretation:**
+
+Reinforces that annotation counts are sparse, hate speech votes are rare, and there is no strong systematic relationship between tweet length and annotation patterns.
 
 
 # DATA MODELING
+The model was evaluated using class-wise metrics due to class imbalance.
 
+Evaluation Metrics
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion Matrix
+
+Results Summary
+| Class     | Precision | Recall | F1-score |
+| --------- | --------- | ------ | -------- |
+| Hate      | 0.31      | 0.63   | 0.41     |
+| Offensive | 0.97      | 0.85   | 0.90     |
+| Neither   | 0.76      | 0.92   | 0.83     |
+
+
+A visualization of class-wise performance was generated to better understand model behavior.
 
 
 # CONCLUSIONS
 
+1. The model performs well on Offensive and Neither classes.
+
+2. Performance on the Hate class is comparatively low, indicating difficulty in distinguishing hate speech from offensive language.
+
+3. This suggests overlapping vocabulary and subtle contextual cues in hate speech.
+
 
 
 # RECOMMENDATIONS
+
+1. Perform detailed error analysis on misclassified samples.
+
+2. Apply class balancing techniques.
+
+3. Use contextual embeddings (e.g., transformer-based models).
+
+4. Incorporate bias and fairness evaluation.
+
+5. Deploy the model.
