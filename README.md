@@ -81,6 +81,7 @@ The majority of tweets fall into class 1. Depending on common labeling conventio
 
 **Interpretation:** 
 Most tweets in the dataset are short. The distribution follows what is typical for Twitter data, where users often post concise messages. Longer tweets are rare.
+
 **3.Average tweet length by class**
 
 ![alt text](Images/image-2.png)
